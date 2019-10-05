@@ -2,14 +2,14 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn import datasets
 
-with open("C:/Users/YEK/PycharmProjects/Salesman Performance Analysis/SALES/Sales.csv", "r", encoding="utf-8") as file:
+with open("C:/Users/Uygar/Documents/salesman-performance-analysis/Sales.csv", "r", encoding="utf-8") as file:
     csv_reader = csv.reader(file)
 
     with open("sales.csv", "w+", encoding="utf-8") as sales:
 
         wtr = csv.writer(sales)
-
         for i in csv_reader:
 
             wtr.writerow((i[1], i[2], i[3], i[4]))
@@ -20,7 +20,7 @@ with open ("sales.csv","r",encoding="utf-8") as sales:
 
     read=csv.reader(sales)
     new = list()
-    textbox_name = input("Name   :")
+    textbox_name = input("Name  :")
     control=0
     for i in read:
         if len(i)==4 and i[3]==textbox_name :
@@ -28,7 +28,7 @@ with open ("sales.csv","r",encoding="utf-8") as sales:
             print(i)
             new.append(i)
     if control==0:
-        print("NO SALES IN THIS NAME")
+        print("NO SALES INynuuns NAME")
     else:
 
         file_name = textbox_name + ".csv"
